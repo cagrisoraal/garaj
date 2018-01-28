@@ -1,0 +1,45 @@
+﻿@model  List<WebApplication43.Models.Kitaplar>
+
+@{
+    ViewBag.Title = "Kitapicerikleri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@foreach (var item in @Model)
+{
+    <div class="product-details">
+        <!--product-details-->
+        <div class="col-sm-5">
+            <div class="view-product">
+                <img src="../../Templatedosyalari/images/home/@item.KitapUrl" />
+            </div>
+
+        </div>
+
+        <div class="col-sm-7">
+            <div class="product-information">
+                <!--/product-information-->
+                <h2>@item.KitapAdi</h2>
+                <span>                  
+                    <i class="fa fa-shopping-cart"> </i>
+                    @Html.ActionLink("Kirala", "KiralamaIslemi", "Anasayfa", null, new
+                    {
+                        @class = "btn btn-fefault cart"
+                    })
+
+                    @*<button type="button" class="btn btn-fefault cart">
+                            <i class="fa fa-shopping-cart"> </i>
+
+                            Kirala
+                        </button*@@*>*@
+                </span>
+                <p><b>YAZAR:</b>@item.KitapYazari</p>
+            </div><!--/product-information-->
+        </div>
+    </div>
+
+}
+
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+

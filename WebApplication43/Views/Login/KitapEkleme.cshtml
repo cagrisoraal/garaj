@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "KitapEkleme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("KitapEkleme", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="text" name="isimktp" /> <br /><br />
+    <input type="text" name="yzrktp" /> <br /><br />
+
+    <input type="file" id="inputFile" name="file" /> <br /><br />
+    <input type="submit" value="kaydet" />
+  
+}

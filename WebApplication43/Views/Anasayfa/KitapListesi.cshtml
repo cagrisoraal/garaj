@@ -1,0 +1,34 @@
+﻿@model List<WebApplication43.Models.Kitaplar>
+
+@{
+    ViewBag.Title = "KitapListesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>KitapListesi</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Kitap Adı
+        </th>
+        <th>
+            Yazar Adı
+        </th>
+    </tr>
+
+    @foreach (var item in @Model)
+    {
+        <tr>
+            <th>
+                @item.KitapAdi
+            </th>
+            <th>
+                @item.KitapYazari
+            </th>
+        </tr>
+    }
+
+
+
+</table>

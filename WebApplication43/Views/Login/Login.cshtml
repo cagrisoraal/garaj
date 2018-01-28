@@ -1,0 +1,49 @@
+﻿
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<section id="form">
+    <div class="container">
+        <div class="row">
+            <!--form-->
+            @using (Html.BeginForm("Login", "Login"))
+            {
+                <div class="col-sm-4 col-sm-offset-1">
+                    <div class="login-form">
+                        <!--login form-->
+                        <h2>Giriş Hesabı</h2>
+
+                        <p>Kullanici Adi</p><br />
+                        <input type="text" name="K_adi" /><br />
+
+                        <p>Kullanici Sifre</p><br />
+                        <input type="text" name="K_sifre" /><br />
+
+
+                        <input type="submit" value="Giriş" class="btn btn-default" />
+
+                    </div><!--/login form-->
+                </div>
+
+
+            }
+       
+        </div>
+    </div>
+</section><!--/form-->
+
+
+
+<script src="../../Templatedosyalari/js/jquery.js"></script>
+<script src="../../Templatedosyalari/js/price-range.js"></script>
+<script src="../../Templatedosyalari/js/jquery.scrollUp.min.js"></script>
+<script src="../../Templatedosyalari/js/bootstrap.min.js"></script>
+<script src="../../Templatedosyalari/js/jquery.prettyPhoto.js"></script>
+<script src="../../Templatedosyalari/js/main.js"></script>
+
+

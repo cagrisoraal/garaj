@@ -1,0 +1,47 @@
+﻿@model WebApplication43.Models.KitapPage
+@using PagedList
+@using PagedList.Mvc
+@using WebApplication43.Controllers
+
+
+
+
+<div class="col-sm-9 padding-right">
+    <div class="features_items">
+        <!--features_items-->
+        <h2 class="title text-center">Kitaplar</h2>
+        @foreach (var item in Model.kit)
+        {
+            <div class="col-sm-4">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <img src="../../Templatedosyalari/images/home/@item.KitapUrl" alt="" />                         
+                            <p>@item.KitapAdi</p>
+                            @Html.ActionLink("KitapDetaylari", "Kitapicerikleri", "Anasayfa", new { kitapismi = item.KitapAdi }, null)
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        }
+
+
+    </div>
+</div>
+
+@Html.PagedListPager(Model.kit, page => Url.Action("Index", new RouteValueDictionary
+{
+{"page",page},
+{"KitapAdi",Model.KitapAdi },
+{"YazarAdi",Model.YazarAdi }
+
+
+
+}), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions { UpdateTargetId = "ajax-main" }))
+
+
+
+

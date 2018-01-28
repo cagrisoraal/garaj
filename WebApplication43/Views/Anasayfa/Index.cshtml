@@ -1,0 +1,30 @@
+﻿@model WebApplication43.Models.KitapPage
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-sm-3">
+    <div class="search_box pull-right">
+        @using (Ajax.BeginForm("Index", "Anasayfa", FormMethod.Post, new AjaxOptions { OnSuccess = "loadcust" }))
+        {
+
+            <h3>Kitap Adi</h3>
+            @Html.TextBoxFor(m => m.KitapAdi)
+
+            <h3>Yazar Adi</h3>
+            @Html.TextBoxFor(m => m.YazarAdi)
+            <br /> <br /> <br />
+            <input type="submit" value="ara" name="submit" />
+
+        }
+    </div>
+</div>
+
+<div id="ajax-main">
+
+    @Html.Partial("_kitapp", @Model)
+
+</div>
+
